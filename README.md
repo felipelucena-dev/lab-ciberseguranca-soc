@@ -20,3 +20,8 @@ Para garantir a segurança nas simulações de incidentes, uma rede isolada foi 
 * **Sistema Operacional:** Debian 12 (Netinst)
 * **Método de Aquisição:** Download automatizado via CLI utilizando `wget`.
 * **Propósito:** Servir como base para a criação da primeira Máquina Virtual (VM) isolada no ambiente de laboratório.
+
+## 💻 Provisionamento de Máquina Virtual (VM) via CLI
+Para estruturar o alvo de testes no laboratório, os comandos de criação e ajuste de hardware foram executados:
+1. **Criação da VM:** `vboxmanage createvm --name "Lab-Debian-Alvo" --ostype "Debian_64" --register` (definição do perfil e registro no hipervisor).
+2. **Atribuição de Recursos & Rede:** `vboxmanage modifyvm "Lab-Debian-Alvo" --memory 2048 --cpus 2 --nic1 hostonly --hostonlyadapter1 vboxnet0` (alocação de 2GB de RAM, 2 CPUs e isolamento na interface `vboxnet0`).
