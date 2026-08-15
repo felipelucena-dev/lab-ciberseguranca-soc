@@ -31,3 +31,7 @@ Para habilitar a instalação do sistema operacional na VM isolada, a seguinte i
 1. **Criação de Disco Rígido Virtual:** `vboxmanage createmedium disk ... --size 20480 --format VDI` (alocação de um disco VDI de 20 GB).
 2. **Controladoras de Barramento:** Adição de controladoras SATA (para o disco rígido principal) e IDE (para a unidade óptica).
 3. **Anexação de Mídia:** Conexão do disco rígido virtual e montagem da ISO do Debian 12 na unidade de CD/DVD virtual da VM.
+
+## 🚀 Inicialização e Boot da VM (CLI)
+* **Comando de Acionamento:** `vboxmanage startvm "Lab-Debian-Alvo"`
+* **Status:** Máquina virtual ligada com sucesso, inicializando o instalador do Debian a partir da ISO montada na controladora IDE, pronta para provisionamento do sistema operacional alvo na rede isolada.
