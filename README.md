@@ -15,3 +15,8 @@ Procedimentos executados via terminal Linux:
 Para garantir a segurança nas simulações de incidentes, uma rede isolada foi configurada via CLI:
 1. **Geração da Interface:** `vboxmanage hostonlyif create` (criação da interface `vboxnet0`).
 2. **Definição de Roteamento Base:** `vboxmanage hostonlyif ipconfig vboxnet0 --ip 192.168.56.1` (atribuição do IP de gateway para o host).
+
+## 💿 Aquisição de Mídia de Instalação (ISO)
+* **Sistema Operacional:** Debian 12 (Netinst)
+* **Método de Aquisição:** Download automatizado via CLI utilizando `wget`.
+* **Propósito:** Servir como base para a criação da primeira Máquina Virtual (VM) isolada no ambiente de laboratório.
