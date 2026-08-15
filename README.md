@@ -1,3 +1,4 @@
+
 # Laboratório de Cibersegurança & SOC - Diário de Bordo
 
 Este repositório documenta a construção do meu laboratório prático para estudos de Defesa Cibernética e Resposta a Incidentes. O objetivo é criar um cenário controlado e isolado para treinar ataques e defesas sem riscos para minha máquina real.
