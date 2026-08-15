@@ -25,3 +25,9 @@ Para garantir a segurança nas simulações de incidentes, uma rede isolada foi 
 Para estruturar o alvo de testes no laboratório, os comandos de criação e ajuste de hardware foram executados:
 1. **Criação da VM:** `vboxmanage createvm --name "Lab-Debian-Alvo" --ostype "Debian_64" --register` (definição do perfil e registro no hipervisor).
 2. **Atribuição de Recursos & Rede:** `vboxmanage modifyvm "Lab-Debian-Alvo" --memory 2048 --cpus 2 --nic1 hostonly --hostonlyadapter1 vboxnet0` (alocação de 2GB de RAM, 2 CPUs e isolamento na interface `vboxnet0`).
+
+## 💾 Configuração de Armazenamento e Mídia (CLI)
+Para habilitar a instalação do sistema operacional na VM isolada, a seguinte infraestrutura de hardware virtual foi configurada:
+1. **Criação de Disco Rígido Virtual:** `vboxmanage createmedium disk ... --size 20480 --format VDI` (alocação de um disco VDI de 20 GB).
+2. **Controladoras de Barramento:** Adição de controladoras SATA (para o disco rígido principal) e IDE (para a unidade óptica).
+3. **Anexação de Mídia:** Conexão do disco rígido virtual e montagem da ISO do Debian 12 na unidade de CD/DVD virtual da VM.
