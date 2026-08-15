@@ -39,3 +39,27 @@ Documentação dos erros encontrados e correções aplicadas durante o processo:
   2. Ajuste manual da data: `date -s "2026-08-15 09:45:00"`
   3. Nova execução: `apt update`
 * **Explicação:** A precisão do tempo é vital para a segurança em redes e sistemas Linux. Sem a data correta, os pacotes são vistos como não confiáveis.
+
+## 🛡️ Fase 2: Implantação dos Sentinelas de Segurança
+
+Com a infraestrutura base pronta, iniciamos a instalação e configuração das ferramentas de monitoramento, auditoria e defesa.
+
+### 1. Auditoria e Logs do Kernel (Auditd)
+Ferramenta essencial para monitorar ações críticas e chamadas de sistema.
+* **Instalação:** `sudo apt install -y auditd`
+* **Habilitação:** `sudo systemctl enable --now auditd`
+
+### 2. Coleta de Logs e Proteção de Perímetro (Rsyslog e Fail2Ban)
+Gerenciamento de logs e mitigação ativa contra ataques de força bruta no SSH.
+* **Instalação:** `sudo apt install -y rsyslog fail2ban`
+* **Habilitação:** `sudo systemctl enable --now rsyslog fail2ban`
+
+### 3. Integridade de Arquivos (AIDE)
+Criação de linha de base e verificação de integridade de arquivos críticos do sistema.
+* **Instalação:** `sudo apt install -y aide`
+* **Inicialização do Banco de Dados:** `sudo aideinit`
+
+### 4. Scanner de Vulnerabilidades e Hardening (Lynis)
+Análise de conformidade e segurança local do sistema operacional.
+* **Instalação:** `sudo apt install -y lynis`
+* **Execução da Varredura:** `sudo lynis audit system`
