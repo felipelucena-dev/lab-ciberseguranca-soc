@@ -10,3 +10,8 @@ Este repositório documenta a construção do meu laboratório prático para est
 Procedimentos executados via terminal Linux:
 1. **VirtualBox:** Configuração de repositórios Oracle e instalação via `apt`.
 2. **Rede Host-Only:** Criação da interface de rede isolada via `vboxmanage`.
+
+## 🌐 Arquitetura de Rede: Rede Isolada (Host-Only)
+Para garantir a segurança nas simulações de incidentes, uma rede isolada foi configurada via CLI:
+1. **Geração da Interface:** `vboxmanage hostonlyif create` (criação da interface `vboxnet0`).
+2. **Definição de Roteamento Base:** `vboxmanage hostonlyif ipconfig vboxnet0 --ip 192.168.56.1` (atribuição do IP de gateway para o host).
