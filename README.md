@@ -35,3 +35,8 @@ Para habilitar a instalação do sistema operacional na VM isolada, a seguinte i
 ## 🚀 Inicialização e Boot da VM (CLI)
 * **Comando de Acionamento:** `vboxmanage startvm "Lab-Debian-Alvo"`
 * **Status:** Máquina virtual ligada com sucesso, inicializando o instalador do Debian a partir da ISO montada na controladora IDE, pronta para provisionamento do sistema operacional alvo na rede isolada.
+
+## 🛠️ Ajuste de Caminho de Mídia e Re-boot (CLI)
+* **Correção:** Ajustado o caminho da ISO do Debian para o diretório correto do workspace (`~/lab-ciberseguranca-soc/`).
+* **Comando de Reatribuição:** `vboxmanage storageattach ... --medium ~/lab-ciberseguranca-soc/debian-12.5.0-amd64-netinst.iso`
+* **Status:** Máquina reiniciada com sucesso, agora com o instalador do Debian carregando corretamente na tela de boot.
