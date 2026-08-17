@@ -95,11 +95,13 @@ Após a subida dos serviços, o trabalho de monitoramento exige validação cont
     systemctl status rsyslog auditd fail2ban --no-pager
     ```
     *Explicação:* Garante que os serviços fundamentais de coleta de logs, auditoria e bloqueio perimetral continuem ativos e operantes.
-2.  **Monitoramento de Acessos Suspeitos (Força Bruta):**
-    ```bash
-    grep -i "failed" /var/log/auth.log | tail -n 20
-    ```
-    *Explicação:* Analisa as últimas falhas de autenticação para detectar se há varreduras de senha ou ataques ativos contra o serviço SSH.
+2. **Monitoramento de Acessos Suspeitos (Força Bruta):**
+   ```bash
+   # Como o acesso aos logs é restrito ao root, eleve o privilégio primeiro:
+   su -
+   
+   # Em seguida, execute a busca de falhas de autenticação:
+   grep -i "failed" /var/log/auth.log | tail -n 20
 3.  **Auditoria de Integridade do Host:**
     ```bash
     sudo aide --config /etc/aide/aide.conf --check
